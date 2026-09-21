@@ -913,3 +913,46 @@ em {
     padding: 20px;
   }
 }
+
+/* ===== Sizes from Figma ===== */
+.hero__box {
+  min-height: 644px;
+}
+
+.gallery,
+.gallery__col {
+  gap: 40px;
+}
+
+.gallery__img {
+  height: auto;
+  aspect-ratio: 660 / 430;
+}
+
+.gallery__img--tall {
+  height: auto;
+  aspect-ratio: 660 / 590;
+}
+
+.app__img {
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.catalog__grid {
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .hero__box {
+    min-height: 520px;
+  }
+
+  .gallery,
+  .gallery__col,
+  .catalog__grid {
+    gap: 24px;
+  }
+}
