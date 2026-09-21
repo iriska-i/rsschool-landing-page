@@ -956,3 +956,124 @@ em {
     gap: 24px;
   }
 }
+
+/* ===== Figma: cards + modal ===== */
+.product {
+  border-radius: 40px;
+}
+
+.product img {
+  border-radius: 40px;
+}
+
+.product__body {
+  gap: 12px;
+  padding: 20px;
+}
+
+.product__body p {
+  font-size: 16px;
+}
+
+.product__price {
+  font-size: 24px;
+}
+
+.modal__dialog {
+  max-width: 800px;
+  grid-template-columns: 310px 1fr;
+  gap: 24px;
+  padding: 16px;
+  border-radius: 40px;
+}
+
+.modal__img {
+  width: 310px;
+  height: 310px;
+  min-height: 0;
+  border-radius: 32px;
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.modal__content h2 {
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.modal__desc {
+  font-size: 16px;
+}
+
+.modal__group legend {
+  font-weight: 400;
+}
+
+.option {
+  gap: 10px;
+  padding: 6px 16px 6px 6px;
+  font-weight: 600;
+}
+
+.option__badge {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  font-size: 14px;
+  background: var(--border-primary);
+  border-radius: 50%;
+}
+
+.option:has(input:checked) .option__badge {
+  background: var(--text-inverse);
+  color: #403F3D;
+}
+
+.modal__total strong {
+  font-size: 24px;
+}
+
+.modal__note {
+  margin: 12px 0 20px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.modal__btn {
+  width: 100%;
+  margin-top: auto;
+  padding: 12px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid var(--text-primary);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.modal__btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-page);
+}
+
+@media (max-width: 768px) {
+  .modal__dialog {
+    grid-template-columns: 1fr;
+    max-height: 92vh;
+  }
+
+  .modal__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+}

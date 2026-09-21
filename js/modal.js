@@ -8,7 +8,7 @@
   const additivesEl = document.getElementById('modal-additives');
   const totalEl = document.getElementById('modal-total');
   const breakdownEl = document.getElementById('modal-breakdown');
-  const closeBtn = modalEl.querySelector('.modal__close');
+  const closeBtn = modalEl.querySelector('.modal__btn');
 
   let currentProduct = null;
   let currentOptions = null;
@@ -16,13 +16,13 @@
 
   const money = (n) => `$${n.toFixed(2)}`;
 
-  function optionHtml(type, name, o, checked) {
+  // badge = round label inside the pill (S/M/L or 1/2/3), text = text next to it
+  function optionHtml(type, name, id, badge, text, checked) {
     return `
       <label class="option">
-        <input type="${type}" name="${name}" value="${o.id}" ${checked ? 'checked' : ''}>
-        <span class="option__label">${o.label}</span>
-        ${o.note ? `<span class="option__note">${o.note}</span>` : ''}
-        ${type === 'checkbox' ? `<span class="option__note">+${money(o.extra)}</span>` : ''}
+        <input type="${type}" name="${name}" value="${id}" ${checked ? 'checked' : ''}>
+        <span class="option__badge">${badge}</span>
+        <span class="option__text">${text}</span>
       </label>
     `;
   }
@@ -55,10 +55,10 @@
     descEl.textContent = product.description;
 
     sizesEl.innerHTML = currentOptions.sizes
-      .map((s, i) => optionHtml('radio', 'size', s, i === 0))
+      .map((s, i) => optionHtml('radio', 'size', s.id, s.label, s.note, i === 0))
       .join('');
     additivesEl.innerHTML = currentOptions.additives
-      .map((a) => optionHtml('checkbox', 'additive', a, false))
+      .map((a, i) => optionHtml('checkbox', 'additive', a.id, i + 1, a.label, false))
       .join('');
 
     updatePrice();
@@ -93,7 +93,7 @@
   // live price update
   modalEl.addEventListener('change', updatePrice);
 
-  // close: overlay, X button, Escape
+  // close: overlay, Close button, Escape
   modalEl.addEventListener('click', (e) => {
     if (e.target.closest('[data-close]')) closeModal();
   });
