@@ -32,10 +32,10 @@
       <div class="container">
         <h1 class="section__title">Behind each of our cups hides a story</h1>
 
-        <div class="tabs" role="tablist" aria-label="Menu categories">
-          <button class="tab tab--active" type="button" role="tab" aria-selected="true" data-category="coffee">Coffee</button>
-          <button class="tab" type="button" role="tab" aria-selected="false" data-category="tea">Tea</button>
-          <button class="tab" type="button" role="tab" aria-selected="false" data-category="dessert">Dessert</button>
+        <div class="tabs" role="group" aria-label="Menu categories">
+          <button class="tab tab--active" type="button" aria-pressed="true" data-category="coffee">Coffee</button>
+          <button class="tab" type="button" aria-pressed="false" data-category="tea">Tea</button>
+          <button class="tab" type="button" aria-pressed="false" data-category="dessert">Dessert</button>
         </div>
 
         <div class="catalog__grid" id="catalog"></div>
@@ -58,9 +58,9 @@
     <div class="modal__overlay" data-close></div>
     <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button class="modal__close" type="button" data-close aria-label="Close">✕</button>
-      <img class="modal__img" id="modal-img" src="" alt="">
+      <img class="modal__img" id="modal-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
       <div class="modal__content">
-        <h2 id="modal-title"></h2>
+        <h2 id="modal-title">Product name</h2>
         <p class="modal__desc" id="modal-desc"></p>
 
         <fieldset class="modal__group">

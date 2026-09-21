@@ -54,7 +54,7 @@ tabs.forEach((tab) => {
     tabs.forEach((t) => {
       const isActive = t === tab;
       t.classList.toggle('tab--active', isActive);
-      t.setAttribute('aria-selected', String(isActive));
+      t.setAttribute('aria-pressed', String(isActive));
     });
 
     render();
