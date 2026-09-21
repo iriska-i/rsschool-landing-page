@@ -633,3 +633,14 @@ a {
     display: none; /* on mobile: swipe + dots */
   }
 }
+
+/* ===== Load more ===== */
+[hidden] {
+  display: none !important;
+}
+
+.catalog__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}

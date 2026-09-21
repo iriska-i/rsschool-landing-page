@@ -33,47 +33,15 @@
         <h1 class="section__title">Behind each of our cups hides a story</h1>
 
         <div class="tabs" role="tablist" aria-label="Menu categories">
-          <button class="tab tab--active" type="button" role="tab" aria-selected="true">Coffee</button>
-          <button class="tab" type="button" role="tab" aria-selected="false">Tea</button>
-          <button class="tab" type="button" role="tab" aria-selected="false">Dessert</button>
+          <button class="tab tab--active" type="button" role="tab" aria-selected="true" data-category="coffee">Coffee</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-category="tea">Tea</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-category="dessert">Dessert</button>
         </div>
 
-        <div class="catalog__grid" id="catalog">
-          <article class="product">
-            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Irish coffee">
-            <div class="product__body">
-              <h3>Irish coffee</h3>
-              <p>Fragrant black coffee with Jameson whiskey and whipped cream.</p>
-              <span class="product__price">$7.00</span>
-            </div>
-          </article>
+        <div class="catalog__grid" id="catalog"></div>
 
-          <article class="product">
-            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=80" alt="Americano">
-            <div class="product__body">
-              <h3>Americano</h3>
-              <p>Espresso diluted with hot water for a lighter taste.</p>
-              <span class="product__price">$4.50</span>
-            </div>
-          </article>
-
-          <article class="product">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Latte">
-            <div class="product__body">
-              <h3>Latte</h3>
-              <p>Espresso with steamed milk and a thin layer of foam.</p>
-              <span class="product__price">$5.00</span>
-            </div>
-          </article>
-
-          <article class="product">
-            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&q=80" alt="Cappuccino">
-            <div class="product__body">
-              <h3>Cappuccino</h3>
-              <p>Equal parts espresso, steamed milk and milk foam.</p>
-              <span class="product__price">$5.50</span>
-            </div>
-          </article>
+        <div class="catalog__more">
+          <button class="btn" id="load-more" type="button" hidden>Load more</button>
         </div>
       </div>
     </section>
@@ -88,5 +56,7 @@
 
   <script src="js/theme.js"></script>
   <script src="js/burger.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/catalog.js"></script>
 </body>
 </html>
