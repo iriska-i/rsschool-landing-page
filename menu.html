@@ -4,22 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu | Coffee House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="header">
     <div class="container header__inner">
-      <a href="index.html" class="logo">Coffee<span>House</span></a>
+      <a href="index.html" class="logo">Resource<small>Coffee house</small></a>
 
       <nav class="nav" id="nav" aria-label="Main navigation">
         <ul class="nav__list">
-          <li><a href="index.html" class="nav__link">Home</a></li>
-          <li><a href="menu.html" class="nav__link nav__link--active">Menu</a></li>
+          <li><a href="index.html#favorite" class="nav__link">Favorite coffee</a></li>
+          <li><a href="index.html#about" class="nav__link">About</a></li>
+          <li><a href="index.html#app" class="nav__link">Mobile app</a></li>
+          <li><a href="#contact" class="nav__link">Contact us</a></li>
+          <li class="nav__mobile-only"><a href="menu.html" class="nav__link nav__link--active">Menu</a></li>
         </ul>
       </nav>
 
       <div class="header__actions">
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">🌙</button>
+        <a href="menu.html" class="header__menu header__menu--active">Menu</a>
         <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -30,62 +37,80 @@
   <main>
     <section class="section catalog">
       <div class="container">
-        <h1 class="section__title">Behind each of our cups hides a story</h1>
+        <h1 class="section__title">Behind each of our cups hides an <em>amazing surprise</em></h1>
 
-        <div class="tabs" role="tablist" aria-label="Menu categories">
-          <button class="tab tab--active" type="button" role="tab" aria-selected="true">Coffee</button>
-          <button class="tab" type="button" role="tab" aria-selected="false">Tea</button>
-          <button class="tab" type="button" role="tab" aria-selected="false">Dessert</button>
+        <div class="tabs" role="group" aria-label="Menu categories">
+          <button class="tab tab--active" type="button" aria-pressed="true" data-category="coffee">Coffee</button>
+          <button class="tab" type="button" aria-pressed="false" data-category="tea">Tea</button>
+          <button class="tab" type="button" aria-pressed="false" data-category="dessert">Dessert</button>
         </div>
 
-        <div class="catalog__grid" id="catalog">
-          <article class="product">
-            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Irish coffee">
-            <div class="product__body">
-              <h3>Irish coffee</h3>
-              <p>Fragrant black coffee with Jameson whiskey and whipped cream.</p>
-              <span class="product__price">$7.00</span>
-            </div>
-          </article>
+        <div class="catalog__grid" id="catalog"></div>
 
-          <article class="product">
-            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=80" alt="Americano">
-            <div class="product__body">
-              <h3>Americano</h3>
-              <p>Espresso diluted with hot water for a lighter taste.</p>
-              <span class="product__price">$4.50</span>
-            </div>
-          </article>
-
-          <article class="product">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Latte">
-            <div class="product__body">
-              <h3>Latte</h3>
-              <p>Espresso with steamed milk and a thin layer of foam.</p>
-              <span class="product__price">$5.00</span>
-            </div>
-          </article>
-
-          <article class="product">
-            <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&q=80" alt="Cappuccino">
-            <div class="product__body">
-              <h3>Cappuccino</h3>
-              <p>Equal parts espresso, steamed milk and milk foam.</p>
-              <span class="product__price">$5.50</span>
-            </div>
-          </article>
+        <div class="catalog__more">
+          <button class="btn" id="load-more" type="button" hidden>Load more</button>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <a href="index.html" class="logo">Coffee<span>House</span></a>
-      <p>© 2026 Coffee House. All rights reserved.</p>
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__box">
+        <div>
+          <p class="footer__title">Sip, Savor, Smile. <em>It’s coffee time!</em></p>
+          <div class="footer__social">
+            <a href="#" aria-label="Twitter">X</a>
+            <a href="#" aria-label="Instagram">In</a>
+            <a href="#" aria-label="Facebook">f</a>
+          </div>
+        </div>
+        <div>
+          <h3>Contact us</h3>
+          <address class="footer__contact">
+            <p>8558 Green Rd., LA</p>
+            <p><a href="tel:+16035550123">+1 (603) 555-0123</a></p>
+            <p>Mon-Sat: 9:00-23:00</p>
+          </address>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <div class="modal" id="modal" hidden>
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <img class="modal__img" id="modal-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+      <div class="modal__content">
+        <h2 id="modal-title">Product name</h2>
+        <p class="modal__desc" id="modal-desc"></p>
+
+        <fieldset class="modal__group">
+          <legend>Size</legend>
+          <div class="modal__options" id="modal-sizes"></div>
+        </fieldset>
+
+        <fieldset class="modal__group">
+          <legend>Additives</legend>
+          <div class="modal__options" id="modal-additives"></div>
+        </fieldset>
+
+        <div class="modal__total">
+          <span>Total:</span>
+          <strong id="modal-total"></strong>
+        </div>
+        <p class="modal__breakdown" id="modal-breakdown"></p>
+        <p class="modal__note">The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+
+        <button class="modal__btn" type="button" data-close>Close</button>
+      </div>
+    </div>
+  </div>
+
   <script src="js/theme.js"></script>
+  <script src="js/burger.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/modal.js"></script>
 </body>
 </html>

@@ -4,22 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coffee House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="header">
     <div class="container header__inner">
-      <a href="index.html" class="logo">Coffee<span>House</span></a>
+      <a href="index.html" class="logo">Resource<small>Coffee house</small></a>
 
       <nav class="nav" id="nav" aria-label="Main navigation">
         <ul class="nav__list">
-          <li><a href="index.html" class="nav__link nav__link--active">Home</a></li>
-          <li><a href="menu.html" class="nav__link">Menu</a></li>
+          <li><a href="#favorite" class="nav__link">Favorite coffee</a></li>
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#app" class="nav__link">Mobile app</a></li>
+          <li><a href="#contact" class="nav__link">Contact us</a></li>
+          <li class="nav__mobile-only"><a href="menu.html" class="nav__link">Menu</a></li>
         </ul>
       </nav>
 
       <div class="header__actions">
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">🌙</button>
+        <a href="menu.html" class="header__menu">Menu</a>
         <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -29,91 +36,114 @@
 
   <main>
     <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__text">
-          <h1>Enjoy premium coffee at our charming <span>coffee shop</span></h1>
-          <p>Freshly roasted beans, handmade desserts and a cozy place to start your day.</p>
-          <a href="menu.html" class="btn">Go to menu</a>
-        </div>
-        <img class="hero__img" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80" alt="Cup of coffee on a wooden table">
-      </div>
-    </section>
-
-    <section class="section about">
       <div class="container">
-        <h2 class="section__title">About us</h2>
-        <div class="about__grid">
-          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&q=80" alt="Cozy interior of the coffee house">
-          <div>
-            <p>Coffee House started as a small family place with one goal: serve honest coffee made from carefully chosen beans.</p>
-            <p>Every cup is prepared by our baristas, and every dessert is baked in-house each morning.</p>
+        <div class="hero__box">
+          <div class="hero__bg">
+            <img src="img/hero.jpg" alt="">
+          </div>
+          <div class="hero__text">
+            <h1><em>Enjoy</em> premium coffee at our charming cafe</h1>
+            <p>With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite beverage.</p>
+            <a href="menu.html" class="btn">Menu</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section favorites">
+    <section class="section favorites" id="favorite">
       <div class="container">
-        <h2 class="section__title">Favorite coffee</h2>
-        <div class="cards">
-          <article class="card">
-            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Cappuccino">
-            <h3>Cappuccino</h3>
-            <p>Espresso with velvety steamed milk foam.</p>
-          </article>
-          <article class="card">
-            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=80" alt="Americano">
-            <h3>Americano</h3>
-            <p>Bold espresso softened with hot water.</p>
-          </article>
-          <article class="card">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Latte">
-            <h3>Latte</h3>
-            <p>Smooth, milky and perfect for slow mornings.</p>
-          </article>
+        <h2 class="section__title">Choose your <em>favorite</em> coffee</h2>
+
+        <div class="slider" id="slider">
+          <button class="slider__arrow slider__arrow--prev" id="slider-prev" type="button" aria-label="Previous slide">←</button>
+
+          <div class="slider__viewport">
+            <div class="slider__track" id="slider-track">
+              <article class="slide">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=80" alt="Cappuccino" draggable="false">
+                <h3>Cappuccino</h3>
+                <p>Equal parts espresso, steamed milk and milk foam.</p>
+                <span class="slide__price">$5.50</span>
+              </article>
+              <article class="slide">
+                <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=900&q=80" alt="Americano" draggable="false">
+                <h3>Americano</h3>
+                <p>Bold espresso softened with hot water.</p>
+                <span class="slide__price">$4.50</span>
+              </article>
+              <article class="slide">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=80" alt="Latte" draggable="false">
+                <h3>Latte</h3>
+                <p>Espresso with steamed milk and a thin layer of foam.</p>
+                <span class="slide__price">$5.00</span>
+              </article>
+            </div>
+          </div>
+
+          <button class="slider__arrow slider__arrow--next" id="slider-next" type="button" aria-label="Next slide">→</button>
+        </div>
+
+        <div class="slider__dots" id="slider-dots"></div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container">
+        <h2 class="about__lead">Resource is <em>the perfect and cozy place</em> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
+
+        <div class="gallery">
+          <div class="gallery__col">
+            <img class="gallery__img gallery__img--tall" src="img/about-1.png" alt="Guest stirring a cup of coffee">
+            <img class="gallery__img" src="img/about-2.png" alt="Cup of coffee with warm lights">
+          </div>
+          <div class="gallery__col">
+            <img class="gallery__img" src="img/about-3.png" alt="Man drinking coffee">
+            <img class="gallery__img gallery__img--tall" src="img/about-4.png" alt="Couple enjoying coffee together">
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section why">
-      <div class="container">
-        <h2 class="section__title">Why choose us</h2>
-        <ul class="why__list">
-          <li class="why__item">
-            <h3>Fresh beans</h3>
-            <p>Roasted weekly from trusted farms.</p>
-          </li>
-          <li class="why__item">
-            <h3>Skilled baristas</h3>
-            <p>Trained to make every cup consistent.</p>
-          </li>
-          <li class="why__item">
-            <h3>Cozy atmosphere</h3>
-            <p>A calm place to work, read or meet friends.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section visit">
-      <div class="container">
-        <h2 class="section__title">Visit us</h2>
-        <address class="visit__info">
-          <p>Main Street 12, Rzeszów</p>
-          <p>Mon–Sun: 8:00–20:00</p>
-          <p><a href="tel:+48000000000">+48 000 000 000</a></p>
-        </address>
+    <section class="section app" id="app">
+      <div class="container app__inner">
+        <div class="app__text">
+          <h2><em>Download</em> our app to start ordering</h2>
+          <p>Download the Resource app today and experience the comfort of ordering your favorite coffee from wherever you are.</p>
+          <div class="app__stores">
+            <a href="#" class="store">App Store</a>
+            <a href="#" class="store">Google Play</a>
+          </div>
+        </div>
+        <img class="app__img" src="img/app.png" alt="Resource mobile app screens">
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <a href="index.html" class="logo">Coffee<span>House</span></a>
-      <p>© 2026 Coffee House. All rights reserved.</p>
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__box">
+        <div>
+          <p class="footer__title">Sip, Savor, Smile. <em>It’s coffee time!</em></p>
+          <div class="footer__social">
+            <a href="#" aria-label="Twitter">X</a>
+            <a href="#" aria-label="Instagram">In</a>
+            <a href="#" aria-label="Facebook">f</a>
+          </div>
+        </div>
+        <div>
+          <h3>Contact us</h3>
+          <address class="footer__contact">
+            <p>8558 Green Rd., LA</p>
+            <p><a href="tel:+16035550123">+1 (603) 555-0123</a></p>
+            <p>Mon-Sat: 9:00-23:00</p>
+          </address>
+        </div>
+      </div>
     </div>
   </footer>
 
   <script src="js/theme.js"></script>
+  <script src="js/burger.js"></script>
+  <script src="js/slider.js"></script>
 </body>
 </html>
