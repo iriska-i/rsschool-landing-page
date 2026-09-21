@@ -54,9 +54,38 @@
     </div>
   </footer>
 
+  <div class="modal" id="modal" hidden>
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" type="button" data-close aria-label="Close">✕</button>
+      <img class="modal__img" id="modal-img" src="" alt="">
+      <div class="modal__content">
+        <h2 id="modal-title"></h2>
+        <p class="modal__desc" id="modal-desc"></p>
+
+        <fieldset class="modal__group">
+          <legend>Size</legend>
+          <div class="modal__options" id="modal-sizes"></div>
+        </fieldset>
+
+        <fieldset class="modal__group">
+          <legend>Additives</legend>
+          <div class="modal__options" id="modal-additives"></div>
+        </fieldset>
+
+        <div class="modal__total">
+          <span>Total:</span>
+          <strong id="modal-total"></strong>
+        </div>
+        <p class="modal__breakdown" id="modal-breakdown"></p>
+      </div>
+    </div>
+  </div>
+
   <script src="js/theme.js"></script>
   <script src="js/burger.js"></script>
   <script src="js/products.js"></script>
   <script src="js/catalog.js"></script>
+  <script src="js/modal.js"></script>
 </body>
 </html>

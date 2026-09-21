@@ -65,3 +65,43 @@ const PRODUCTS = [
     description: 'Mascarpone cream layered with coffee-soaked biscuits.',
     image: 'https://images.unsplash.com/photo-1567327613485-fbc7bf196198?w=600&q=80' },
 ];
+
+// Options shown in the modal. Final price = product.price + size.extra + sum(additives.extra)
+const OPTIONS = {
+  coffee: {
+    sizes: [
+      { id: 's', label: 'S', note: '200 ml', extra: 0 },
+      { id: 'm', label: 'M', note: '300 ml', extra: 0.5 },
+      { id: 'l', label: 'L', note: '400 ml', extra: 1.0 },
+    ],
+    additives: [
+      { id: 'sugar', label: 'Sugar', extra: 0.5 },
+      { id: 'cinnamon', label: 'Cinnamon', extra: 0.5 },
+      { id: 'syrup', label: 'Syrup', extra: 0.5 },
+    ],
+  },
+  tea: {
+    sizes: [
+      { id: 's', label: 'S', note: '200 ml', extra: 0 },
+      { id: 'm', label: 'M', note: '300 ml', extra: 0.5 },
+      { id: 'l', label: 'L', note: '400 ml', extra: 1.0 },
+    ],
+    additives: [
+      { id: 'sugar', label: 'Sugar', extra: 0.5 },
+      { id: 'lemon', label: 'Lemon', extra: 0.5 },
+      { id: 'honey', label: 'Honey', extra: 0.5 },
+    ],
+  },
+  dessert: {
+    sizes: [
+      { id: 's', label: 'S', note: '100 g', extra: 0 },
+      { id: 'm', label: 'M', note: '150 g', extra: 0.5 },
+      { id: 'l', label: 'L', note: '200 g', extra: 1.0 },
+    ],
+    additives: [
+      { id: 'berries', label: 'Berries', extra: 0.5 },
+      { id: 'cream', label: 'Whipped cream', extra: 0.5 },
+      { id: 'chocolate', label: 'Chocolate sauce', extra: 0.5 },
+    ],
+  },
+};
