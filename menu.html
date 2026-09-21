@@ -4,22 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu | Coffee House</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="header">
     <div class="container header__inner">
-      <a href="index.html" class="logo">Coffee<span>House</span></a>
+      <a href="index.html" class="logo">Resource<small>Coffee house</small></a>
 
       <nav class="nav" id="nav" aria-label="Main navigation">
         <ul class="nav__list">
-          <li><a href="index.html" class="nav__link">Home</a></li>
-          <li><a href="menu.html" class="nav__link nav__link--active">Menu</a></li>
+          <li><a href="index.html#favorite" class="nav__link">Favorite coffee</a></li>
+          <li><a href="index.html#about" class="nav__link">About</a></li>
+          <li><a href="index.html#app" class="nav__link">Mobile app</a></li>
+          <li><a href="#contact" class="nav__link">Contact us</a></li>
+          <li class="nav__mobile-only"><a href="menu.html" class="nav__link nav__link--active">Menu</a></li>
         </ul>
       </nav>
 
       <div class="header__actions">
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle light/dark theme">🌙</button>
+        <a href="menu.html" class="header__menu header__menu--active">Menu</a>
         <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -30,7 +37,7 @@
   <main>
     <section class="section catalog">
       <div class="container">
-        <h1 class="section__title">Behind each of our cups hides a story</h1>
+        <h1 class="section__title">Behind each of our cups hides an <em>amazing surprise</em></h1>
 
         <div class="tabs" role="group" aria-label="Menu categories">
           <button class="tab tab--active" type="button" aria-pressed="true" data-category="coffee">Coffee</button>
@@ -47,10 +54,26 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <a href="index.html" class="logo">Coffee<span>House</span></a>
-      <p>© 2026 Coffee House. All rights reserved.</p>
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__box">
+        <div>
+          <p class="footer__title">Sip, Savor, Smile. <em>It’s coffee time!</em></p>
+          <div class="footer__social">
+            <a href="#" aria-label="Twitter">X</a>
+            <a href="#" aria-label="Instagram">In</a>
+            <a href="#" aria-label="Facebook">f</a>
+          </div>
+        </div>
+        <div>
+          <h3>Contact us</h3>
+          <address class="footer__contact">
+            <p>8558 Green Rd., LA</p>
+            <p><a href="tel:+16035550123">+1 (603) 555-0123</a></p>
+            <p>Mon-Sat: 9:00-23:00</p>
+          </address>
+        </div>
+      </div>
     </div>
   </footer>
 
