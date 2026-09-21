@@ -53,27 +53,44 @@
     </section>
 
     <section class="section favorites">
-      <div class="container">
-        <h2 class="section__title">Favorite coffee</h2>
-        <div class="cards">
-          <article class="card">
-            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Cappuccino">
-            <h3>Cappuccino</h3>
-            <p>Espresso with velvety steamed milk foam.</p>
+  <div class="container">
+    <h2 class="section__title">Favorite coffee</h2>
+
+    <div class="slider" id="slider">
+      <button class="slider__arrow slider__arrow--prev" id="slider-prev" type="button" aria-label="Previous slide">‹</button>
+
+      <div class="slider__viewport">
+        <div class="slider__track" id="slider-track">
+          <article class="slide">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=80" alt="Cappuccino" draggable="false">
+            <div class="slide__text">
+              <h3>Cappuccino</h3>
+              <p>Espresso with velvety steamed milk foam.</p>
+            </div>
           </article>
-          <article class="card">
-            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=80" alt="Americano">
-            <h3>Americano</h3>
-            <p>Bold espresso softened with hot water.</p>
+          <article class="slide">
+            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=900&q=80" alt="Americano" draggable="false">
+            <div class="slide__text">
+              <h3>Americano</h3>
+              <p>Bold espresso softened with hot water.</p>
+            </div>
           </article>
-          <article class="card">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Latte">
-            <h3>Latte</h3>
-            <p>Smooth, milky and perfect for slow mornings.</p>
+          <article class="slide">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=80" alt="Latte" draggable="false">
+            <div class="slide__text">
+              <h3>Latte</h3>
+              <p>Smooth, milky and perfect for slow mornings.</p>
+            </div>
           </article>
         </div>
       </div>
-    </section>
+
+      <button class="slider__arrow slider__arrow--next" id="slider-next" type="button" aria-label="Next slide">›</button>
+    </div>
+
+    <div class="slider__dots" id="slider-dots"></div>
+  </div>
+</section>
 
     <section class="section why">
       <div class="container">
@@ -116,5 +133,6 @@
 
   <script src="js/theme.js"></script>
   <script src="js/burger.js"></script>
+  <script src="js/slider.js"></script>
 </body>
 </html>
